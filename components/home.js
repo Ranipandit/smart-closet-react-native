@@ -6,6 +6,7 @@ export default class Home extends Component {
     render() {
         return(
             <View>
+                {this.props.children}
                 {/* <Backgroundimage /> */}
                 <Text style={styles.text} >Welcome to Smart Closet</Text>
             </View>

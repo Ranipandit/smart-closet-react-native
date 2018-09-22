@@ -6,7 +6,6 @@ export default class Backgroundimage extends Component {
         return(
                 <Image source={require('./images/clothes.gif')}
                   style={styles.backgroundImage}>
-
                   {this.props.children}
 
                 </Image>
