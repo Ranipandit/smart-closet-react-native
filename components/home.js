@@ -1,14 +1,20 @@
 import React , {Component} from 'react';
 import {StyleSheet , AppRegistry, View, Text} from 'react-native';
-// import Backgroundimage from './backgroundImage';
+import { Header} from 'react-native-elements';
+import Backgroundimage from './backgroundImage';
 
 export default class Home extends Component {
     render() {
         return(
             <View>
-                {this.props.children}
-                {/* <Backgroundimage /> */}
-                <Text style={styles.text} >Welcome to Smart Closet</Text>
+                <Header
+                    placement="left"
+                    leftComponent={{ icon: 'menu', color: '#fff' }}
+                    centerComponent={{ text: 'SMART CLOSET', style: { color: '#fff', fontWeight: "bold" } }}
+                    rightComponent={{ icon: 'home', color: '#fff' }}
+                    />
+                 <Backgroundimage /> 
+                <Text style={styles.text} {...this.props}>Welcome to Smart Closet</Text>
             </View>
         )
     }

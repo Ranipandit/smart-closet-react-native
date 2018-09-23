@@ -1,10 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Header} from 'react-native-elements';
-import Home from './components/home';
-// import NavigationBar from 'react-native-navigation-bar';
-// import PropTypes from 'prop-types';
-
+import Home from './components/home.js';
 
 export default class App extends React.Component {
   
@@ -14,12 +10,6 @@ export default class App extends React.Component {
       <View 
       style={styles.container}
       >
-        <Header
-          placement="left"
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{ text: 'SMART CLOSET', style: { color: '#fff', fontWeight: "bold" } }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
-        />
         <Home />
       </View>
      
@@ -30,8 +20,8 @@ export default class App extends React.Component {
  const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    /* backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',*/
   }
 });
