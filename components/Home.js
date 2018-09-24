@@ -1,106 +1,124 @@
-import React , {Component} from 'react';
-import {StyleSheet , AppRegistry, View, Text , ImageBackground, Animated, Image} from 'react-native';
-import { Header} from 'react-native-elements';
-import { Button } from 'react-native-paper';
-import * as Animatable from 'react-native-animatable';
-/*const MyCustomComponent = Animatable.createAnimatableComponent(MyCustomComponent);*/
-
+import React, { Component } from "react";
+import {
+  StyleSheet,
+  AppRegistry,
+  View,
+  ImageBackground,
+  Animated,
+  Image
+} from "react-native";
+import { Header } from "react-native-elements";
+import { Button } from "react-native-paper";
+import * as Animatable from "react-native-animatable";
+import { url } from "inspector";
 
 export default class Home extends Component {
-    componentWillMount() {
-        this.animatedValue = new Animated.Value(0)
-    }
+  componentWillMount() {
+    this.animatedValue = new Animated.Value(0);
+  }
 
-    componentDidMount() {
-        Animated.timing(this.animatedValue , {
-            toValue: 1,
-            duration : 1500
-        }).start()
-    }
-    render() {
+  componentDidMount() {
+    Animated.timing(this.animatedValue, {
+      toValue: 1,
+      duration: 1500
+    }).start();
+  }
+  render() {
+    const interpolateRotation = this.animatedValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["0deg", "720deg"]
+    });
 
-        const interpolateRotation = this.animatedValue.interpolate({
-            inputRange : [0, 1],
-            outputRange: ['0deg', '720deg'],
-        })
+    const animatedStyle = {
+      transform: [{ rotate: interpolateRotation }]
+    };
 
-        const animatedStyle ={
-            transform : [
-                { rotate : interpolateRotation }
-            ]
-        }
+    return (
+    //   <ImageBackground
+    //     source={require('./images/clothes.gif')}
+    //     style={{ width: "100%", height: "100%" }}
+    //   >
+        <View style={styles.container}>
+          <Header
+            placement="left"
+            leftComponent={{ icon: "menu", color: "#fff" }}
+            centerComponent={{
+              text: "SMART CLOSET",
+              style: { color: "#fff", fontWeight: "bold" }
+            }}
+            rightComponent={{ icon: "home", color: "#fff" }}
+          />
+          <Animatable.Text
+            animation="zoomInUp"
+            iterationCount={9}
+            direction="alternate"
+            style={styles.text}
+          >
+            Welcome
+          </Animatable.Text>
+          <Animated.Text style={[styles.subText, animatedStyle]}>
+            to Smart Closet
+          </Animated.Text>
 
-        
+          <Button
+            mode="contained"
+            onPress={() => alert("Pressed")}
+            style={styles.button}
+          >
+            Sign Up
+          </Button>
+          <Button
+            mode="contained"
+            onPress={() => {
+              console.log("###########################################"),
+                this.props.navigation.navigate("Login");
+            }}
+            style={styles.button}
+          >
+            Login
+          </Button>
 
-        return(
-            <View>
-                    {/* <Header
-                        placement="left"
-                        leftComponent={{ icon: 'menu', color: '#fff' }}
-                        centerComponent={{ text: 'SMART CLOSET', style: { color: '#fff', fontWeight: "bold" } }}
-                        rightComponent={{ icon: 'home', color: '#fff' }}
-                        /> */}
-                    
-                {/* <ImageBackground source={require('/images/clothes.gif')} style={{width: '100%', height:'100%' }}>      */}
-                    <Animatable.Text animation="zoomInUp" iterationCount={9} direction="alternate" style={styles.text}>Welcome</Animatable.Text>
-                    <Animated.Text style={[styles.subText, animatedStyle]}>to Smart Closet</Animated.Text>
-
-                    <Button mode="contained" onPress={() => alert('Pressed')} style={styles.button}>
-                        Sign Up
-                    </Button>
-                    <Button mode="contained" 
-                    onPress={() => {
-                        console.log('###########################################')
-                        this.props.navigation.navigate('Login')}} style={styles.button}>
-                        Login
-                    </Button>
-
-                    {/* <Image source={require('/images/smile1.gif')}/> */}
-                    <Image source={require('./images/smile1.gif')} style={styles.image1}>
-                        {this.props.children}
-                    </Image>
-
-               
-                {/* </ImageBackground>*/}
-            </View>                     
-        );
-    }
+          <Image source={require("./images/smile1.gif")} style={styles.image1}>
+            {this.props.children}
+          </Image>
+        </View>
+    );
+  }
 }
 
- const styles = StyleSheet.create({
-    container : {
-        flex: 1,
-    },
-    text: {
-        marginTop: 150,
-        fontWeight: 'bold',
-        color : 'black',
-        fontSize : 40,
-        textAlign : 'center',
-        justifyContent: 'center', 
-    },
-    subText : {
-        fontSize: 20,
-        marginBottom:50,
-        fontWeight: 'bold',
-        color : 'black',
-        textAlign : 'center',
-        justifyContent: 'center', 
-    },
-    button : {
-        marginTop : 10,
-        padding : 10,
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundImage : url('./images/clothes.gif'),
+  },
+  text: {
+    marginTop: 150,
+    fontWeight: "bold",
+    color: "black",
+    fontSize: 40,
+    textAlign: "center",
+    justifyContent: "center"
+  },
+  subText: {
+    fontSize: 20,
+    marginBottom: 50,
+    fontWeight: "bold",
+    color: "black",
+    textAlign: "center",
+    justifyContent: "center"
+  },
+  button: {
+    marginTop: 10,
+    padding: 10
+  },
+  image1: {
+    flexGrow: 1,
+    marginTop: 10,
+    width: 130,
+    height: 130,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+});
 
-    },
-    image1 : {
-        flexGrow: 1 ,
-        marginTop: 10,
-        width : 130,
-        height : 130,
-        justifyContent: 'center',
-        alignItems: 'center',
-        
-    }
-}); 
-
-AppRegistry.registerComponent('Home', () => Home);
+AppRegistry.registerComponent("Home", () => Home);
