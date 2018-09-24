@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {AppRegistry ,View, Image ,StyleSheet, Text} from 'react-native';
 
-export default class Backgroundimage extends Component {
+export default class BackgroundImage extends Component {
     render(){
         return(
                 <Image source={require('./images/clothes.gif')}
@@ -23,5 +23,5 @@ const styles = StyleSheet.create({
     },
 });
 
-AppRegistry.registerComponent('Backgroundimage', () => Backgroundimage);
+AppRegistry.registerComponent('BackgroundImage', () => BackgroundImage);
 
