@@ -10,7 +10,6 @@ import {
 import { Header } from "react-native-elements";
 import { Button } from "react-native-paper";
 import * as Animatable from "react-native-animatable";
-import { url } from "inspector";
 
 export default class Home extends Component {
   componentWillMount() {
@@ -34,10 +33,10 @@ export default class Home extends Component {
     };
 
     return (
-    //   <ImageBackground
-    //     source={require('./images/clothes.gif')}
-    //     style={{ width: "100%", height: "100%" }}
-    //   >
+      <ImageBackground
+        source={require('./images/clothes2.jpg')}
+        style={{ width: "100%", height: "100%",  }}
+      >
         <View style={styles.container}>
           <Header
             placement="left"
@@ -78,10 +77,11 @@ export default class Home extends Component {
             Login
           </Button>
 
-          <Image source={require("./images/smile1.gif")} style={styles.image1}>
+          <Image source={require("./images/smile2.gif")} style={styles.image1}>
             {this.props.children}
           </Image>
         </View>
+        </ImageBackground>
     );
   }
 }
@@ -89,12 +89,13 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundImage : url('./images/clothes.gif'),
+    // backgroundColor:'rgba(128,128,0,0.5)',
+    backgroundColor: 'rgba(52, 52, 52, 0.8)'
   },
   text: {
     marginTop: 150,
     fontWeight: "bold",
-    color: "black",
+    color: "white",
     fontSize: 40,
     textAlign: "center",
     justifyContent: "center"
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 50,
     fontWeight: "bold",
-    color: "black",
+    color: "white",
     textAlign: "center",
     justifyContent: "center"
   },

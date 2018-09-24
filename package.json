@@ -19,6 +19,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "babel-preset-react-native": "^4.0.0",
     "expo": "^27.0.1",
     "prop-types": "^15.6.2",
     "react": "16.3.1",
@@ -30,6 +31,7 @@
     "react-native-navigation-bar": "^0.2.1",
     "react-native-paper": "^2.0.1",
     "react-navigation": "^2.16.0",
-    "react-router-native": "^4.3.0"
+    "react-router-native": "^4.3.0",
+    "tcomb-form-native": "^0.6.17"
   }
 }

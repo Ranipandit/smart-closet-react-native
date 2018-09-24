@@ -10,11 +10,13 @@ const AppNavigator = StackNavigator(
         header: null
       }
     },
-    Login: { screen: Login }
+    Login: { 
+      screen: Login,
+      navigationOptions: () => ({
+        title: `Home`,
+      }),
+    }
   }
-  // {
-  // initialRouteName: 'Home',
-  // }
 );
 
 export default AppNavigator;
