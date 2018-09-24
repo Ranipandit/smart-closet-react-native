@@ -34,12 +34,12 @@ export default class Home extends Component {
 
         return(
             <View>
-                    <Header
+                    {/* <Header
                         placement="left"
                         leftComponent={{ icon: 'menu', color: '#fff' }}
                         centerComponent={{ text: 'SMART CLOSET', style: { color: '#fff', fontWeight: "bold" } }}
                         rightComponent={{ icon: 'home', color: '#fff' }}
-                        />
+                        /> */}
                     
                 {/* <ImageBackground source={require('/images/clothes.gif')} style={{width: '100%', height:'100%' }}>      */}
                     <Animatable.Text animation="zoomInUp" iterationCount={9} direction="alternate" style={styles.text}>Welcome</Animatable.Text>
@@ -48,7 +48,10 @@ export default class Home extends Component {
                     <Button mode="contained" onPress={() => alert('Pressed')} style={styles.button}>
                         Sign Up
                     </Button>
-                    <Button mode="contained" onPress={() => alert('Pressed')} style={styles.button}>
+                    <Button mode="contained" 
+                    onPress={() => {
+                        console.log('###########################################')
+                        this.props.navigation.navigate('Login')}} style={styles.button}>
                         Login
                     </Button>
 
@@ -65,6 +68,9 @@ export default class Home extends Component {
 }
 
  const styles = StyleSheet.create({
+    container : {
+        flex: 1,
+    },
     text: {
         marginTop: 150,
         fontWeight: 'bold',
