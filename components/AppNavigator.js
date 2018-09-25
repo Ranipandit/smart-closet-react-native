@@ -1,6 +1,7 @@
 import { StackNavigator } from "react-navigation";
 import Home from "./Home";
 import Login from "./Login";
+import SignUp from './signup';
 
 const AppNavigator = StackNavigator(
   {
@@ -12,6 +13,12 @@ const AppNavigator = StackNavigator(
     },
     Login: { 
       screen: Login,
+      navigationOptions: () => ({
+        title: `Home`,
+      }),
+    },
+    SignUp : {
+      screen: SignUp,
       navigationOptions: () => ({
         title: `Home`,
       }),

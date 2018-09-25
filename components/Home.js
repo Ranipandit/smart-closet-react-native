@@ -61,20 +61,23 @@ export default class Home extends Component {
 
           <Button
             mode="contained"
-            onPress={() => alert("Pressed")}
-            style={styles.button}
-          >
-            Sign Up
-          </Button>
-          <Button
-            mode="contained"
             onPress={() => {
               console.log("###########################################"),
                 this.props.navigation.navigate("Login");
             }}
             style={styles.button}
           >
-            Login
+            LOGIN
+          </Button>
+          <Button
+            mode="contained"
+            onPress={() => {
+              console.log("###########################################"),
+                this.props.navigation.navigate("SignUp");
+            }}
+            style={styles.button}
+          >
+            SIGN UP
           </Button>
 
           <Image source={require("./images/smile2.gif")} style={styles.image1}>
@@ -89,19 +92,18 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor:'rgba(128,128,0,0.5)',
-    backgroundColor: 'rgba(52, 52, 52, 0.8)'
+    // backgroundColor: 'rgba(52, 52, 52, 0.8)'
   },
   text: {
     marginTop: 150,
     fontWeight: "bold",
     color: "white",
-    fontSize: 40,
+    fontSize: 60,
     textAlign: "center",
     justifyContent: "center"
   },
   subText: {
-    fontSize: 20,
+    fontSize: 30,
     marginBottom: 50,
     fontWeight: "bold",
     color: "white",

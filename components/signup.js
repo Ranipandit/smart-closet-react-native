@@ -11,12 +11,15 @@ import {
 } from 'react-native';
 
 export default class LoginView extends Component {
-
+y
   constructor(props) {
     super(props);
     state = {
-      email   : '',
-      password: '',
+        name : '',
+        email   : '',
+        username : '',
+        password : '',
+        cornfirmpassword : '',
     }
   }
 
@@ -28,11 +31,28 @@ export default class LoginView extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.inputContainer}>
+          <Image style={styles.inputIcon} source={{uri: 'https://static.thenounproject.com/png/101346-200.png'}}/>
+          <TextInput style={styles.inputs}
+              placeholder="Name"
+              keyboardType="text"
+              underlineColorAndroid='transparent'
+              onChangeText={(name) => this.setState({name})}/>
+        </View>
+        <View style={styles.inputContainer}>
+          <Image style={styles.inputIcon} source={{uri: 'https://cdn4.iconfinder.com/data/icons/cyber-security-part-2/46/mail_normal-512.png'}}/>
+          <TextInput style={styles.inputs}
+              placeholder="Email"
+              keyboardType="email-address"
+              underlineColorAndroid='transparent'
+              onChangeText={(email) => this.setState({email})}/>
+        </View>
+        <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'http://www.groomix.com/pages/images/user-icon.png'}}/>
           <TextInput style={styles.inputs}
               placeholder="Username"
+              keyboardType="text"
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
+              onChangeText={(username) => this.setState({username})}/>
         </View>
         
         <View style={styles.inputContainer}>
@@ -44,17 +64,22 @@ export default class LoginView extends Component {
               onChangeText={(password) => this.setState({password})}/>
         </View>
 
+        <View style={styles.inputContainer}>
+          <Image style={styles.inputIcon} source={{uri: 'https://static.thenounproject.com/png/19504-200.png'}}/>
+          <TextInput style={styles.inputs}
+              placeholder="CornfirmPassword"
+              secureTextEntry={true}
+              underlineColorAndroid='transparent'
+              onChangeText={(cornfirmpassword) => this.setState({cornfirmpassword})}/>
+        </View>
+
         <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('login')}>
-          <Text style={styles.loginText}>Login</Text>
+          <Text style={styles.loginText}>SignUp</Text>
         </TouchableHighlight>
 
         <TouchableHighlight style={styles.buttonContainer} onPress={() => this.onClickListener('restore_password')}>
             <Text>Forgot your password?</Text>
         </TouchableHighlight>
-
-        {/* <TouchableHighlight style={styles.buttonContainer} onPress={() => this.onClickListener('register')}>
-            <Text>Register</Text>
-        </TouchableHighlight> */}
       </View>
     );
   }
