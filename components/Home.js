@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'rgba(52, 52, 52, 0.8)'
   },
   text: {
-    marginTop: 150,
+    marginTop: 120,
     fontWeight: "bold",
     color: "white",
     fontSize: 60,
