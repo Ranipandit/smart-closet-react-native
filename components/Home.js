@@ -124,4 +124,3 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent("Home", () => Home);

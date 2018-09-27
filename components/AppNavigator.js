@@ -1,9 +1,9 @@
-import { StackNavigator } from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 import Home from "./Home";
 import Login from "./Login";
 import SignUp from './signup';
 
-const AppNavigator = StackNavigator(
+const AppNavigator = createStackNavigator(
   {
     Home: {
       screen: Home,
