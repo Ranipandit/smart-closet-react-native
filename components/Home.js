@@ -42,7 +42,7 @@ export default class Home extends Component {
             placement="left"
             leftComponent={{ icon: "menu", color: "#fff" }}
             centerComponent={{
-              text: "SMART CLOSET",
+              text: "What to wear",
               style: { color: "#fff", fontWeight: "bold" }
             }}
             rightComponent={{ icon: "home", color: "#fff" }}
@@ -80,9 +80,9 @@ export default class Home extends Component {
             SIGN UP
           </Button>
 
-          <Image source={require("./images/smile2.gif")} style={styles.image1}>
+          {/* <Image source={require("./images/smile2.gif")} style={styles.image1}>
             {this.props.children}
-          </Image>
+          </Image> */}
         </View>
         </ImageBackground>
     );
