@@ -114,13 +114,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     padding: 10
   },
-  image1: {
-    flexGrow: 1,
-    marginTop: 10,
-    width: 130,
-    height: 130,
-    justifyContent: "center",
-    alignItems: "center"
-  }
+  // image1: {
+  //   flexGrow: 1,
+  //   marginTop: 10,
+  //   width: 130,
+  //   height: 130,
+  //   justifyContent: "center",
+  //   alignItems: "center"
+  // }
 });
 
